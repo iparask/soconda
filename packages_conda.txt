@@ -35,7 +35,7 @@ automake
 libtool
 m4
 psutil
-cython
+cython=3.0.3
 pytest
 fftw
 gsl

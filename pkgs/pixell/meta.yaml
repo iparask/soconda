@@ -34,7 +34,7 @@ requirements:
     - m4
     - libtool
     - python
-    - cython
+    - cython=3.0.3
     - scipy
     - astropy
     - healpy

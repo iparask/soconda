@@ -9,10 +9,10 @@ base_dir=/global/common/software/sobs/perlmutter/conda
 temp_dir=${SCRATCH}/temp_soconda
 
 # Location for installs
-install_dir=/global/common/software/sobs/perlmutter/conda_envs
+install_dir=${SCRATCH}/conda_envs
 
 # Module file directory
-module_dir=/global/common/software/sobs/perlmutter/modulefiles
+module_dir=${install_dir}/modulefiles
 
 #===========================================
 
@@ -27,7 +27,7 @@ mkdir -p "${temp_dir}"
 today=$(date +%Y%m%d)
 
 # The name of env
-env_name="${install_dir}/soconda"
+env_name="${install_dir}/rp_env"
 
 # The full version
 env_version="${today}_${version}"
@@ -74,8 +74,8 @@ popd 2>&1 >/dev/null
 popd 2>&1 >/dev/null
 
 # Update permissions
-chmod -R g-w,g+rX "${env_name}_${env_version}" >> "${logfile}" 2>&1
-chmod -R g-w,g+rX "${module_dir}/soconda" >> "${logfile}" 2>&1
+#chmod -R g-w,g+rX "${env_name}_${env_version}" >> "${logfile}" 2>&1
+#chmod -R g-w,g+rX "${module_dir}/soconda" >> "${logfile}" 2>&1
 
 # Return name of log file
 echo "${logfile}"
